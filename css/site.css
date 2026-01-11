@@ -1,0 +1,129 @@
+/* ===== Reset ===== */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;background:#000}
+
+/* ===== Gate overlay ===== */
+.gate-overlay{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:block;
+  background:#000;
+  overflow:hidden;
+}
+.gate-bg{
+  position:absolute;
+  inset:0;
+  background:url("../assets/images/enter.png") center/cover no-repeat;
+}
+.gate-ui{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:10vh;
+  width:min(560px, 92vw);
+  border-radius:18px;
+  background:rgba(255,255,255,.86);
+  backdrop-filter: blur(10px);
+  padding:18px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.35);
+}
+.gate-title{ font-weight:700; margin-bottom:12px; font-size:16px; text-align:center; }
+.gate-row{ display:flex; gap:10px; }
+.gate-input{
+  flex:1;
+  padding:12px 12px;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,.15);
+  font-size:16px;
+}
+.gate-btn{
+  padding:12px 14px;
+  border-radius:12px;
+  border:0;
+  background:#111;
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+}
+.gate-msg{ margin-top:10px; min-height:20px; font-size:14px; opacity:.9; text-align:center; }
+.gate-video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:none;
+}
+.gate-overlay.gate-fade{ animation: gateFade 900ms ease forwards; }
+@keyframes gateFade{ to { opacity:0; pointer-events:none; } }
+
+/* ===== Site sections ===== */
+.site{ position:relative; z-index:1; }
+.site-hidden{ visibility:hidden; }
+
+.section{
+  min-height:100vh;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  position:relative;
+}
+
+/* ===== Backgrounds from Canva (replace these PNGs) ===== */
+.bg-anisha-weds-kishan{ background-image:url("../assets/images/anisha-weds-kishan.png"); }
+.bg-dates-and-location{ background-image:url("../assets/images/dates-and-location.png"); }
+.bg-the-countdown-begins{ background-image:url("../assets/images/the-countdown-begins.png"); }
+.bg-the-details-venue{ background-image:url("../assets/images/the-details-venue.png"); }
+.bg-the-details-events{ background-image:url("../assets/images/the-details-events.png"); }
+.bg-invite-01-halidi{ background-image:url("../assets/images/invite-01-halidi.png"); }
+.bg-haldi-1{ background-image:url("../assets/images/haldi-1.png"); }
+.bg-haldi-2{ background-image:url("../assets/images/haldi-2.png"); }
+.bg-ak-logo{ background-image:url("../assets/images/ak-logo.png"); }
+
+
+/* Overlays */
+.overlay{ position:absolute; inset:0; display:flex; padding:24px; }
+.overlay-center{ align-items:center; justify-content:center; }
+.overlay-bottom-right{ align-items:flex-end; justify-content:flex-end; }
+
+/* UI bits */
+.card{
+  width:min(520px, 92vw);
+  border-radius:18px;
+  background:rgba(255,255,255,.86);
+  backdrop-filter: blur(10px);
+  padding:16px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.18);
+}
+.card-title{ font-weight:600; margin-bottom:10px; }
+
+.countdown-row{ display:flex; gap:14px; justify-content:space-between; }
+.count{
+  flex:1;
+  text-align:center;
+  padding:10px 8px;
+  border-radius:14px;
+  background:rgba(0,0,0,.05);
+}
+.count span{ display:block; font-size:28px; font-weight:700; line-height:1; }
+.count small{ display:block; opacity:.8; margin-top:4px; }
+
+.map-card{ width:min(560px, 92vw); }
+.map-card iframe{
+  width:100%;
+  height:260px;
+  border:0;
+  border-radius:14px;
+  background:#f2f2f2;
+}
+
+/* Mobile tweaks */
+@media (max-width: 640px){
+  .overlay{ padding:16px; }
+  .count span{ font-size:24px; }
+  .map-card iframe{ height:220px; }
+  .gate-row{ flex-direction:column; }
+  .gate-ui{ bottom:8vh; }
+}

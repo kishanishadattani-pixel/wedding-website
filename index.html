@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wedding</title>
+  <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+
+  <!-- ===== OPENING ENVELOPE (overlay) ===== -->
+  <div id="gateOverlay" class="gate-overlay" aria-label="Password entry">
+    <div class="gate-bg"></div>
+
+    <div class="gate-ui">
+      <div class="gate-title">Enter password to open</div>
+      <div class="gate-row">
+        <input id="pwd" class="gate-input" type="password" placeholder="Password" autocomplete="off" />
+        <button id="btn" class="gate-btn" type="button">Open</button>
+      </div>
+      <div id="msg" class="gate-msg" role="status" aria-live="polite"></div>
+    </div>
+
+    <video id="openVideo" class="gate-video" playsinline preload="auto">
+      <source src="assets/video/envelope-open.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <audio id="music" src="assets/audio/music.mp3" preload="auto" loop></audio>
+
+  <!-- ===== MAIN SITE (one-page continuous scroll) ===== -->
+  <main id="site" class="site site-hidden">
+
+    <!-- Anisha Weds Kishan (the hero page) -->
+    <section class="section bg-anisha-weds-kishan" id="anisha-weds-kishan"></section>
+
+    <!-- Dates and Location -->
+    <section class="section bg-dates-and-location" id="dates-and-location"></section>
+
+    <!-- The Countdown Begins -->
+    <section class="section bg-the-countdown-begins" id="the-countdown-begins">
+      <div class="overlay overlay-center">
+        <div class="countdown card">
+          <div class="card-title">Countdown</div>
+          <div class="countdown-row">
+            <div class="count"><span id="d">--</span><small>days</small></div>
+            <div class="count"><span id="h">--</span><small>hours</small></div>
+            <div class="count"><span id="m">--</span><small>mins</small></div>
+          </div>
+        </div>
+      </div></section>
+
+    <!-- The Details Venue -->
+    <section class="section bg-the-details-venue" id="the-details-venue">
+      <div class="overlay overlay-bottom-right">
+        <div class="card map-card">
+          <div class="card-title">Aviyana Hua Hin</div>
+          <iframe id="map" title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div></section>
+
+    <!-- The Details Events -->
+    <section class="section bg-the-details-events" id="the-details-events"></section>
+
+    <!-- invite-01-halidi -->
+    <section class="section bg-invite-01-halidi" id="invite-01-halidi"></section>
+
+    <!-- Haldi 1 -->
+    <section class="section bg-haldi-1" id="haldi-1"></section>
+
+    <!-- Haldi 2 -->
+    <section class="section bg-haldi-2" id="haldi-2"></section>
+
+    <!-- AK Logo -->
+    <section class="section bg-ak-logo" id="ak-logo"></section>
+
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/gate.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/map.js"></script>
+</body>
+</html>
